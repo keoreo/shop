@@ -7,6 +7,16 @@ from django.contrib.contenttypes.fields import GenericForeignKey
 User = get_user_model()
 
 
+class LatestProductsManager:
+
+    def ger_products_for_models(self, *args, **kwargs):
+
+
+class LatestProducts:
+
+    objects = None
+
+
 class Category(models.Model):
 
     name = models.CharField(max_length=255, verbose_name='Имя категории')
