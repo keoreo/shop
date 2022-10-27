@@ -100,6 +100,7 @@ class Smartphone(Product):
 
 
 '''
+# модель спецификации (пока не используется)
 class Specifications(models.Model):
 
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
@@ -108,4 +109,15 @@ class Specifications(models.Model):
 
     def __str__(self):
         return 'Характеристики для товара: {}'.format(self.name)
+'''
+
+
+'''
+# тестовая модель для изображений (не обязательно)
+class SomeModel(models.Model):
+
+    image = models.ImageField()
+
+    def __str__(self):
+        return str(self.id)
 '''

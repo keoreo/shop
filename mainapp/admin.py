@@ -37,4 +37,7 @@ admin.site.register(Smartphone, SmartphoneAdmin)
 admin.site.register(CardProduct)
 admin.site.register(Cart)
 admin.site.register(Castomer)
-
+'''
+# регистрация модели (она не обязательна)
+admin.site.register(SomeModel)
+'''
