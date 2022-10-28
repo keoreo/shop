@@ -9,12 +9,21 @@ User = get_user_model()
 
 class LatestProductsManager:
 
-    def ger_products_for_models(self, *args, **kwargs):
+    @staticmethod
+    def get_products_for_main_page(*args, **kwargs):
+
+        products = []
+        ct_models = ContentType.objects.filter(model__in=args)
+
+        for ct_model in ct_models:
+            model_products = ct_model.model_class()._base_manager.all().order_by('-id')[:5]
+            products.extend(model_products)
+        return products
 
 
 class LatestProducts:
 
-    objects = None
+    objects = LatestProductsManager()
 
 
 class Category(models.Model):
