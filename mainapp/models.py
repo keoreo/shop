@@ -67,6 +67,10 @@ class CardProduct(models.Model):
     qty = models.PositiveIntegerField(default=1)
     final_price = models.DecimalField(max_digits=9, decimal_places=2, verbose_name='Общая цена')
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(args, kwargs)
+        self.product = None
+
     def __str__(self):
         return "Продукты: {} (для корзины)".format(self.product.title)
 
