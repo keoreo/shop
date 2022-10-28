@@ -9,6 +9,7 @@ User = get_user_model()
 
 class LatestProductsManager:
 
+    # функция для вывода товаров в одной моделе
     @staticmethod
     def get_products_for_main_page(*args, **kwargs):
         with_respect_to = kwargs.get('with_respect_to')
